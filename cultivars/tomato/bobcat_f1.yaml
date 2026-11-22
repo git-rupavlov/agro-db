@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 identity:
   id: solanum_lycopersicum__bobcat_f1
   cultivar_name: Bobcat F1
@@ -70,6 +70,13 @@ morphology:
     lateral_spread_cm: null
     adventitious_roots: null
     rootstock_dependence: null
+developmental_environment:
+  species_profile: species/solanum_lycopersicum/environment.yaml
+  phenological_scale: event_based
+  stages_can_overlap: true
+  # No verified Bobcat F1-specific stage overrides.
+  # Inherit species-level references; do not mislabel as breeder measurements.
+  stages: {}
 climate:
   usda_hardiness_zone:
     min: null
