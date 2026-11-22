@@ -1,0 +1,489 @@
+schema_version: '1.1'
+profile_id: solanum_lycopersicum_environment
+taxonomy:
+  species: Solanum lycopersicum
+scope: species_level_literature
+measurement_policy:
+  units: metric
+  unknown: null
+  range_semantics: "Reference values only; do not treat missing ranges as zero."
+  life_stages_can_overlap: true
+  note: "Growth stages are event-based, not fixed days; reproductive stages may coexist."
+general_requirements:
+  dli_mol_m2_day_reference: {min: 15, max: 30}
+  photosynthesis_photoperiod_hours_reported: {min: 8, max: 16}
+  dli_values_are_not_stage_specific: true
+  uv_tolerance: null
+stage_requirements:
+  seed_germination:
+    transitions:
+      starts_when: seed_sown
+      ends_when: radicle_emerged
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: 20, max: 30}
+      substrate_optimal: {min: 20, max: 30}
+      soil_target: 25
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  emergence:
+    transitions:
+      starts_when: radicle_emerged
+      ends_when: cotyledons_open
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  seedling:
+    transitions:
+      starts_when: cotyledons_open
+      ends_when: transplant_ready
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: 27
+      air_night_min_reference: 18
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  vegetative:
+    transitions:
+      starts_when: transplant_established
+      ends_when: first_open_flower
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  flowering:
+    transitions:
+      starts_when: first_open_flower
+      ends_when: flower_senesced
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: 21, max: 24}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  fruit_set:
+    transitions:
+      starts_when: pollinated_flower
+      ends_when: visible_fruit
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: 21, max: 24}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: 15.5
+        night_poor_fruit_set_above: 24
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: 70, max: 70}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  fruit_growth:
+    transitions:
+      starts_when: visible_fruit
+      ends_when: breaker_stage
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  ripening:
+    transitions:
+      starts_when: breaker_stage
+      ends_when: harvest_ripe
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  harvest:
+    transitions:
+      starts_when: harvest_ripe
+      ends_when: end_of_production
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+  overwintering:
+    transitions:
+      starts_when: growth_arrested
+      ends_when: growth_resumed
+      chronological_days: {min: null, max: null}
+      can_overlap: true
+    temperature_c:
+      air_day_optimal: {min: null, max: null}
+      air_night_optimal: {min: null, max: null}
+      root_zone_optimal: {min: null, max: null}
+      substrate_optimal: {min: null, max: null}
+      soil_target: null
+      air_day_max_reference: null
+      air_night_min_reference: null
+      stress_limits:
+        night_poor_fruit_set_below: null
+        night_poor_fruit_set_above: null
+        lethal_min: null
+        lethal_max: null
+    light:
+      photoperiod_hours: {min: null, max: null}
+      ppfd_umol_m2_s: {min: null, max: null}
+      dli_mol_m2_day: {min: null, max: null}
+      uv_a: null
+      uv_b: null
+      direct_sun_hours: {min: null, max: null}
+    atmosphere:
+      relative_humidity_percent_optimal: {min: null, max: null}
+      vpd_kpa_optimal: {min: null, max: null}
+      co2_ppm: {min: null, max: null}
+      airflow_m_s: {min: null, max: null}
+    water:
+      soil_moisture_vwc_percent: {min: null, max: null}
+      irrigation_mm_per_day: {min: null, max: null}
+      drought_sensitivity: null
+      waterlogging_sensitivity: null
+    nutrition:
+      ec_ds_m: {min: null, max: null}
+      ph: {min: null, max: null}
+      n_mg_l: {min: null, max: null}
+      p_mg_l: {min: null, max: null}
+      k_mg_l: {min: null, max: null}
+      ca_mg_l: {min: null, max: null}
+      mg_mg_l: {min: null, max: null}
+    evidence: []
+sources:
+  - id: usda_review
+    url: https://www.ars.usda.gov/ARSUserFiles/20200500/Pubs%202018/Shamshiri2018%20-%20review%20optimum%20microclimate%20greenhouse.pdf
+    relates_to: [seed_germination, seedling]
+  - id: virginia_tech
+    url: https://www.pubs.ext.vt.edu/SPES/spes-508/spes-508.html
+    relates_to: [flowering, fruit_set, general_light]
+  - id: ontario_agriculture
+    url: https://www.ontario.ca/page/extreme-temperature-effects-tomato-and-pepper-crops
+    relates_to: [fruit_set]
+  - id: alaska_extension
+    url: https://www.uaf.edu/ces/publications/database/gardening/pollination-fruit-development-tomatoes.php
+    relates_to: [fruit_set]
+  - id: plant_science_guidelines
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4235429/
+    relates_to: [general_light]
+notes:
+  - "Measured or recommended environments depend on cultivar, light, humidity, and culture method."
+  - "Relative humidity 70% for fruit set is an approximate literature reference, not a rigid setpoint."
+  - "Night limits 15.5 and 24 degrees C mark higher risk of poor fruit set, not lethal temperatures."
+  - "Overwintering is for protected plants only; tomato is frost sensitive."
+  - "Seedling reference night minimum 18 and day maximum 27 are not a complete optimum band."
