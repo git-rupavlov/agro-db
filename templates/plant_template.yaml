@@ -1,0 +1,277 @@
+schema_version: '1.0'
+identity:
+  id: null
+  cultivar_name: null
+  aliases: []
+  breeder: null
+  commercial_brand: null
+  registration_id: null
+taxonomy:
+  kingdom: Plantae
+  family: null
+  genus: null
+  species: null
+  subspecies: null
+  botanical_variety: null
+  common_names: []
+  synonyms: []
+genetics:
+  cultivar_type: null
+  hybrid: null
+  generation: null
+  open_pollinated: null
+  ploidy: null
+  chromosome_count: null
+  seed_true_to_type: null
+  patent_or_pvr: null
+  parentage: null
+lifecycle:
+  botanical_lifecycle: null
+  cultivation_lifecycle: null
+  lifespan_years: null
+  evergreen: null
+  dormancy:
+    type: null
+    required: null
+    chilling_hours: null
+  overwintering:
+    aboveground_survival: null
+    underground_survival: null
+morphology:
+  growth_form: null
+  growth_habit: null
+  growth_type: null
+  vigor: null
+  growth_rate: null
+  height_cm:
+    min: null
+    typical: null
+    max: null
+  spread_cm:
+    min: null
+    typical: null
+    max: null
+  stem:
+    woody: null
+    branching: null
+    internode_length_cm: null
+  leaves:
+    evergreen: null
+    size_cm: null
+    density: null
+    pubescence: null
+    cuticle: null
+  roots:
+    architecture: null
+    depth_cm: null
+    lateral_spread_cm: null
+    adventitious_roots: null
+    rootstock_dependence: null
+climate:
+  usda_hardiness_zone:
+    min: null
+    max: null
+  temperature_c:
+    germination:
+      min: null
+      optimal_min: null
+      optimal_max: null
+      max: null
+    growth:
+      min: null
+      optimal_min: null
+      optimal_max: null
+      max: null
+    flowering:
+      min: null
+      optimal_min: null
+      optimal_max: null
+    fruit_set:
+      min: null
+      optimal_min: null
+      optimal_max: null
+    lethal_min: null
+    lethal_max: null
+  frost_tolerance: null
+  heat_tolerance: null
+  drought_tolerance: null
+  humidity_tolerance: null
+  wind_tolerance: null
+  chill_requirement_hours: null
+  vernalization_requirement: null
+light:
+  exposure: null
+  direct_sun_hours:
+    min: null
+    optimal_min: null
+    optimal_max: null
+  dli_mol_m2_day:
+    min: null
+    optimal_min: null
+    optimal_max: null
+  ppfd_umol_m2_s:
+    optimal_min: null
+    optimal_max: null
+  photoperiod_response: null
+  uv_a_tolerance: null
+  uv_b_tolerance: null
+  sunscald_susceptibility: null
+  fruit_shading_by_foliage: null
+  shade_tolerance: null
+soil:
+  textures: []
+  structure: null
+  drainage: null
+  ph:
+    min: null
+    optimal_min: null
+    optimal_max: null
+    max: null
+  organic_matter_percent: null
+  salinity_tolerance_ec_ds_m: null
+  compaction_tolerance: null
+  waterlogging_tolerance: null
+water:
+  demand: null
+  drought_response: null
+  irrigation_mm_per_week: null
+  water_stress_sensitive_stages: []
+  preferred_soil_moisture_percent: null
+nutrition:
+  nutrient_demand: null
+  nitrogen_fixation: null
+  mycorrhiza:
+    type: null
+    dependence: null
+  deficiency_sensitivities: []
+  uptake_or_accumulation: []
+phenology:
+  germination_days:
+    min: null
+    max: null
+  days_to_emergence: null
+  days_to_transplant: null
+  days_to_first_flower: null
+  days_to_first_harvest: null
+  maturity_class: null
+  flowering_months: []
+  harvest_months: []
+  harvest_window_days: null
+  fruiting_pattern: null
+  photoperiod_trigger: null
+reproduction:
+  sexual:
+    flower_sex: null
+    sexual_system: null
+    self_fertile: null
+    self_incompatibility: null
+    pollination_mode: []
+    pollinators: []
+    cross_pollination_rate_percent: null
+    seed_dormancy: null
+    seed_viability_years: null
+  vegetative:
+    cuttings: null
+    layering: null
+    division: null
+    grafting: null
+    runners: null
+    suckers: null
+    tissue_culture: null
+flowers:
+  inflorescence_type: null
+  flower_color: null
+  flower_size_mm: null
+  nectar: null
+  pollen: null
+  flower_count_per_inflorescence: null
+produce:
+  botanical_organ: null
+  botanical_fruit_type: null
+  shape: null
+  skin_color_unripe: null
+  skin_color_ripe: null
+  flesh_color: null
+  weight_g:
+    min: null
+    typical: null
+    max: null
+  size_cm:
+    length: null
+    diameter: null
+  firmness: null
+  skin_thickness_mm: null
+  flesh_texture: null
+  juiciness: null
+  seed_count: null
+  flavor_profile: []
+  brix: null
+  acidity_ph: null
+  shelf_life_days: null
+  transport_resistance: null
+  postharvest_ripening: null
+yield:
+  kg_per_plant:
+    min: null
+    typical: null
+    max: null
+  kg_per_m2:
+    min: null
+    typical: null
+    max: null
+  fruits_per_plant:
+    min: null
+    typical: null
+    max: null
+  harvests_per_season: null
+  bearing_start_year: null
+  bearing_period_years: null
+  alternate_bearing: null
+  synchronous_ripening: null
+biochemistry:
+  measurement_basis: null
+  macronutrients_g_per_100g:
+    carbohydrate: null
+    protein: null
+    fat: null
+    fiber: null
+  vitamins_mg_per_100g: {}
+  minerals_mg_per_100g: {}
+  pigments_mg_per_100g: {}
+  secondary_metabolites: []
+  antinutrients: []
+defense:
+  pathogen_resistance: []
+  pest_resistance: []
+  abiotic_resistance: []
+  physical_defenses: []
+  chemical_defenses: []
+toxicity:
+  known_toxic_compounds: []
+  affected_organs: []
+  toxicity_evidence: null
+  safe_consumption_qualification: null
+ecology:
+  symbioses: []
+  allelopathic_compounds: []
+  documented_interactions: []
+  invasiveness: null
+  wildlife_interactions: []
+cultivation:
+  open_field_suitability: null
+  protected_cultivation_suitability: null
+  container_suitability: null
+  plant_density_per_m2:
+    min: null
+    max: null
+  spacing_cm:
+    in_row: null
+    between_rows: null
+  support: null
+  pruning: null
+  mulch_response: null
+  transplant_tolerance: null
+evidence:
+  sources: []
+  trait_evidence: {}
+  notes: []
