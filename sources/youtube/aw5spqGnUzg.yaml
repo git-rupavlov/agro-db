@@ -2,13 +2,91 @@ source:
   id: youtube_aw5spqGnUzg
   type: youtube_video
   url: https://www.youtube.com/watch?v=aw5spqGnUzg
-  title: null
-  author: null
-  transcript_status: unavailable
+  title: "We Tested 5 Mulches All Season—Here’s the Winner"
+  author: Family Plot Garden
+  published: '2025-11-15'
+  runtime: '00:13:15'
+  transcript_status: recovered_from_corresponding_pbs_episode
+  transcript_url: https://www.pbs.org/video/year-long-mulch-test-results-5fppwh/
+  related_setup_transcript_url: https://www.pbs.org/video/laying-organic-mulch-summer-blooming-shrubs-go5aay/
   reviewed_at: '2026-11-22'
-extraction_status: pending_primary_source
-claims: []
-materials_mentioned: []
-notes:
-  - "No mulch claims extracted: the video transcript could not be accessed."
-  - "Populate timestamp, quotation/paraphrase, mulch material, measurement, units, and evidence grade after obtaining subtitles."
+experiment:
+  type: informal_unreplicated_field_comparison
+  elapsed_days: 175
+  installation_date: '2025-04-29'
+  general_location: Memphis, Tennessee, USA
+  bed_dimensions_m: {length: 2.7432, width: 2.4384}
+  bed_area_m2: 6.689
+  precipitation:
+    first_month: frequent_heavy_rain
+    summer: approximately_two_months_low_rain
+  irrigation: true
+  rainfall_measured_total_mm: null
+  replicates_per_treatment: 1
+  soil_texture: null
+  initial_soil_nutrients: null
+  crop_yield_kg_per_bed: null
+  limitations:
+    - "Plot positions differ in elevation/drainage; heavy rain caused unequal plant mortality."
+    - "Single hot-day temperature snapshot, no treatment-level soil moisture time series."
+    - "No reported replication or statistical confidence intervals."
+    - "Measured weeding labor is not identical to weed count or biomass."
+temperature_snapshot:
+  measurement_context:
+    air_temperature_c: 35.556
+    estimated_cloud_cover_percent: 50
+    soil_condition: damp_to_wet
+    dates_exact: null
+    depth_cm: [2.54, 10.16]
+  measurements:
+    bare_soil: {depth_2_54_cm_c: 37.222, depth_10_16_cm_c: 32.222}
+    shredded_wood: {depth_2_54_cm_c: 34.444, depth_10_16_cm_c: 30.000}
+    pine_needles: {depth_2_54_cm_c: 32.778, depth_10_16_cm_c: 30.000}
+    cardboard: {depth_2_54_cm_c: 31.111, depth_10_16_cm_c: 27.778}
+    woven_landscape_fabric: {depth_2_54_cm_c: 41.111, depth_10_16_cm_c: 32.778}
+    black_polyethylene: {depth_2_54_cm_c: 50.000, depth_10_16_cm_c: 39.444}
+weeding:
+  period_days: 175
+  minutes_per_bed:
+    black_polyethylene: 30
+    cardboard: 34
+    woven_landscape_fabric: 47
+    shredded_wood: 74
+    pine_needles: 112
+    bare_soil: 565
+  derived_percent_labor_reduction_vs_bare_soil:
+    black_polyethylene: 94.69
+    cardboard: 93.98
+    woven_landscape_fabric: 91.68
+    shredded_wood: 86.90
+    pine_needles: 80.18
+materials:
+  pine_needles:
+    initial_depth_cm_reported_approx: 10.16
+    season_end_thinning_reported: true
+  shredded_wood:
+    initial_depth_cm_reported_range: [7.62, 10.16]
+    season_end_thinning_reported: true
+  cardboard:
+    sheet_count: null
+    thickness_mm: null
+    season_end_decomposition_reported: true
+    rain_percolation_observed: true
+  black_polyethylene: {thickness_mm: null, nonporous: true}
+  woven_landscape_fabric: {thickness_mm: null, somewhat_porous: true}
+  bare_soil: {}
+authors_conclusions:
+  preferred_treatment: cardboard
+  reason:
+    - low_weeding_time
+    - cooler_soil_than_control_at_both_measured_depths
+    - decomposes_in_place
+  black_plastic_potential_spring_warming: asserted_not_quantified
+  yield_decrease_from_heat: hypothesized_not_measured
+critical_notes:
+  - "Cardboard cooling could be influenced by material color and insulation, but causal contributions were not isolated."
+  - "Assertions of earthworm mortality, depleted soil organic matter, and microbial activity were not directly measured."
+  - "Independent extension sources warn that cardboard may restrict soil gas and water exchange."
+  - "Surface wood mulch is not equivalent to mixing wood into soil when assessing nitrogen immobilization."
+  - "No crop production data permits ranking materials by yield."
+  - "This record contains paraphrase and structured measurements, not a full copyrighted transcript."
