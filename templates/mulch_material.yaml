@@ -1,0 +1,74 @@
+schema_version: '1.0'
+entity_type: mulch_material
+identity:
+  id: null
+  names: []
+  origin_material: null
+  material_class: null
+  botanical_source:
+    genus: null
+    species: null
+    plant_part: null
+  processing:
+    shredded: null
+    chipped: null
+    composted: null
+    aged: null
+    screened: null
+physical:
+  particle_size_mm: {min: null, median: null, max: null}
+  particle_shape: null
+  bulk_density_kg_m3: null
+  water_holding_capacity_l_kg: null
+  water_infiltration_mm_h: null
+  evaporation_suppression_percent: null
+  solar_reflectance: null
+  thermal_conductivity_w_m_k: null
+  decomposition_rate: null
+chemical:
+  carbon_nitrogen_ratio: null
+  total_carbon_percent: null
+  total_nitrogen_percent: null
+  ph: null
+  ec_ds_m: null
+  nutrients_mg_kg: {}
+  phenolic_compounds: []
+  contamination:
+    pesticide_residues: null
+    heavy_metals: null
+    persistent_herbicide_risk: null
+biological:
+  fungal_colonization: null
+  nitrogen_immobilization_risk: null
+  weed_seed_risk: null
+  pathogen_risk: null
+  slug_habitat_effect: null
+  soil_fauna_interactions: []
+field_performance:
+  soil_temperature_day_delta_c: null
+  soil_temperature_night_delta_c: null
+  soil_moisture_delta_percent: null
+  weed_suppression_percent: null
+  erosion_reduction_percent: null
+  soil_organic_matter_effect: null
+  incorporation_depth_cm: null
+application:
+  layer_thickness_cm: {min: null, typical: null, max: null}
+  mass_kg_m2: null
+  volume_l_m2: null
+  replenishment_interval_months: null
+  surface_only: null
+  season: []
+  crop_stage: []
+  restrictions: []
+conditions:
+  soil_texture: []
+  climate: null
+  rainfall_mm: null
+  irrigation: null
+  study_duration_days: null
+  crop: null
+evidence:
+  sources: []
+  measurements: []
+  uncertainty: []
