@@ -1,0 +1,14 @@
+source:
+  id: youtube_aw5spqGnUzg
+  type: youtube_video
+  url: https://www.youtube.com/watch?v=aw5spqGnUzg
+  title: null
+  author: null
+  transcript_status: unavailable
+  reviewed_at: '2026-11-22'
+extraction_status: pending_primary_source
+claims: []
+materials_mentioned: []
+notes:
+  - "No mulch claims extracted: the video transcript could not be accessed."
+  - "Populate timestamp, quotation/paraphrase, mulch material, measurement, units, and evidence grade after obtaining subtitles."
