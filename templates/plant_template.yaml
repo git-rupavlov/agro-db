@@ -1,4 +1,4 @@
-schema_version: '1.0'
+schema_version: '1.1'
 identity:
   id: null
   cultivar_name: null
@@ -67,6 +67,34 @@ morphology:
     lateral_spread_cm: null
     adventitious_roots: null
     rootstock_dependence: null
+developmental_environment:
+  species_profile: null
+  phenological_scale: event_based
+  stages_can_overlap: true
+  stages:
+    seed_germination: {}
+    emergence: {}
+    seedling: {}
+    vegetative: {}
+    flowering: {}
+    fruit_set: {}
+    fruit_growth: {}
+    ripening: {}
+    harvest: {}
+    overwintering: {}
+  # Each stage can override the following fields at species/cultivar level:
+  # transitions: starts_when, ends_when, chronological_days
+  # temperature_c: air_day_optimal, air_night_optimal,
+  #   root_zone_optimal, substrate_optimal, stress_limits
+  # light: photoperiod_hours, ppfd_umol_m2_s,
+  #   dli_mol_m2_day, uv_a, uv_b, direct_sun_hours
+  # atmosphere: relative_humidity_percent_optimal,
+  #   vpd_kpa_optimal, co2_ppm, airflow_m_s
+  # water: soil_moisture_vwc_percent, irrigation_mm_per_day,
+  #   drought_sensitivity, waterlogging_sensitivity
+  # nutrition: ec_ds_m, ph, n_mg_l, p_mg_l,
+  #   k_mg_l, ca_mg_l, mg_mg_l
+  # evidence: source identifiers per stage
 climate:
   usda_hardiness_zone:
     min: null
