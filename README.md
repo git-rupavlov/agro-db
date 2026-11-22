@@ -2,10 +2,21 @@
 
 Structured, evidence-aware YAML records for plant species and cultivars.
 
+## Stage-specific environmental requirements
+
+Conditions are modeled by **phenological stage**, not just by a single lifetime minimum/maximum. Stages are event-triggered and can overlap on a single plant.
+
+The cultivar points to a species-level environment profile and only adds **confirmed cultivar-specific overrides**. An empty override means unknown, not absence of a requirement.
+
+For each stage the model supports air / substrate / root temperatures, PPFD and DLI, photoperiod and UV, RH/VPD/CO2/airflow, soil moisture and irrigation, EC/pH and nutrient concentration, transition markers and per-trait evidence.
+
+Current source-backed tomato data: `species/solanum_lycopersicum/environment.yaml`. Some temperature references are boundary values rather than full optimum ranges; other parameters intentionally remain `null`.
+
 ## Files
 
 - `templates/plant_template.yaml`: full reusable plant trait record template.
 - `cultivars/tomato/bobcat_f1.yaml`: initial record for Bobcat F1 tomato.
+- `species/solanum_lycopersicum/environment.yaml`: evidence-linked requirements by development phase.
 
 ## Design principles
 
