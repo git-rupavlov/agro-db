@@ -41,3 +41,8 @@ PY
 ## Next steps
 
 Add a JSON Schema for validation; separate species-level traits from cultivar overrides; create seasonal observation records.
+
+
+## Makotsevo web application
+
+A working static MVP is available in [`web/`](web/README.md): historical hourly climate, monthly climate table, export and developmental-stage temperature screening. Run locally with `python3 -m http.server 8000 -d web`. GitHub Pages deployment is not enabled automatically.
