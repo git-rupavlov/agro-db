@@ -8,6 +8,7 @@
   <title>AgroDB · Макоцево</title>
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./app.js"></script>
+  <script defer src="./analytics.js"></script>
 </head>
 <body>
 <header class="topbar">
@@ -51,12 +52,23 @@
     <div class="chart-wrap"><canvas id="hourChart" height="260" aria-label="Диаграма почасови исторически стойности"></canvas></div>
     <p class="footnote">Графиката визуализира наличните почасови стойности. За дълги периоди всяка точка е обобщение на часовете в своя пикселен интервал; CSV запазва всички часове. *Почасовият минимум не е гарантирано измерен абсолютен минимум.</p>
   </section>
+  <section class="panel" id="analysisCharts">
+    <div class="section-head"><div><p class="eyebrow">02 / АНАЛИЗ</p><h2>Сезонни климатични графики</h2></div>
+      <span class="subtle">Исторически данни, не прогноза</span></div>
+    <div class="analytics-grid">
+      <div class="mini-chart"><h3>Месечни температури</h3><p>Минимум, средна и максимум от почасовите стойности</p><canvas id="temperatureMonthly" height="210"></canvas></div>
+      <div class="mini-chart"><h3>Студ и горещини</h3><p>Часове под 0°C и над 30°C по месеци</p><canvas id="stressMonthly" height="210"></canvas></div>
+      <div class="mini-chart"><h3>Валежи</h3><p>Сума на почасовите количества, mm</p><canvas id="rainMonthly" height="210"></canvas></div>
+      <div class="mini-chart"><h3>Температура по час на денонощието</h3><p>Средна за избрания период, местно време</p><canvas id="diurnalTemperature" height="210"></canvas></div>
+    </div>
+    <p class="footnote">Тези графики използват същите данни от ERA5-Land, които се зареждат за почасовата диаграма. Минимумите са от почасовите стойности, а не от отделно измерени дневни екстремуми.</p>
+  </section>
   <section class="panel">
-    <div class="section-head"><div><p class="eyebrow">02 / СЕЗОННОСТ</p><h2>Месечен климатичен профил</h2></div></div>
+    <div class="section-head"><div><p class="eyebrow">03 / СЕЗОННОСТ</p><h2>Месечен климатичен профил</h2></div></div>
     <div class="table-scroll"><table><thead><tr><th>Месец</th><th>Средна °C</th><th>Мин. °C</th><th>Макс. °C</th><th>Часове &lt; 0°C</th><th>Часове &gt; 30°C</th><th>Валеж mm</th></tr></thead><tbody id="monthly"><tr><td colspan="7">Няма изтеглени данни.</td></tr></tbody></table></div>
   </section>
   <section class="panel">
-    <div class="section-head"><div><p class="eyebrow">03 / БИОЛОГИЯ</p><h2>Растения и фази на развитие</h2></div></div>
+    <div class="section-head"><div><p class="eyebrow">04 / БИОЛОГИЯ</p><h2>Растения и фази на развитие</h2></div></div>
     <div class="fields plant-fields"><label>Култура<select id="crop"><option value="tomato">Домат · Solanum lycopersicum</option></select></label>
       <label>Сорт<select id="cultivar"><option value="bobcat_f1">Bobcat F1</option></select></label>
       <label>Фаза<select id="stage"></select></label>
@@ -67,7 +79,7 @@
     <p class="footnote">Планирането е ориентировъчно. Фазите се застъпват, а температурите на реанализа не заместват измерванията в конкретната леха. Сортовите данни и видовите данни са разграничени.</p>
   </section>
   <section class="panel">
-    <div class="section-head"><div><p class="eyebrow">04 / ТЕРЕН</p><h2>Какво знаем и какво трябва да измерим</h2></div></div>
+    <div class="section-head"><div><p class="eyebrow">05 / ТЕРЕН</p><h2>Какво знаем и какво трябва да измерим</h2></div></div>
     <div class="terrain-grid">
       <div><span class="field-label">Ориентировъчна позиция</span><strong id="coords">42.6916, 23.8108</strong><p>Координатите не са кадастрално установени граници.</p></div>
       <div><span class="field-label">Реална почвена текстура</span><strong>Неизмерена</strong><p>Необходими са текстурен анализ, дренаж и профил по дълбочина.</p></div>
