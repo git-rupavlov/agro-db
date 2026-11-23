@@ -44,18 +44,27 @@
     <div class="section-head"><div><p class="eyebrow">01 / КЛИМАТ</p><h2>Почасова времева серия</h2></div>
       <div class="inline-controls"><label>Показател<select id="variable">
         <option value="temperature_2m">Въздух, 2 m · °C</option>
-        <option value="soil_temperature_0_to_7cm">Почва, 0–7 cm · °C</option>
+        <option value="soil_temperature_0_to_7cm">Температура почва 0–7 cm · °C</option>
+        <option value="soil_temperature_7_to_28cm">Температура почва 7–28 cm · °C</option>
+        <option value="soil_temperature_28_to_100cm">Температура почва 28–100 cm · °C</option>
+        <option value="soil_temperature_100_to_255cm">Температура почва 100–255 cm · °C</option>
+        <option value="soil_moisture_0_to_7cm">Влажност почва 0–7 cm · m³/m³</option>
+        <option value="soil_moisture_7_to_28cm">Влажност почва 7–28 cm · m³/m³</option>
+        <option value="soil_moisture_28_to_100cm">Влажност почва 28–100 cm · m³/m³</option>
+        <option value="soil_moisture_100_to_255cm">Влажност почва 100–255 cm · m³/m³</option>
         <option value="relative_humidity_2m">Влажност · %</option>
         <option value="precipitation">Валеж · mm/h</option>
         <option value="shortwave_radiation">Радиация · W/m²</option>
       </select></label><button class="secondary" id="csv" disabled>Експорт CSV</button></div></div>
     <div class="chart-wrap"><canvas id="hourChart" height="260" aria-label="Диаграма почасови исторически стойности"></canvas></div>
-    <p class="footnote">Графиката визуализира наличните почасови стойности. За дълги периоди всяка точка е обобщение на часовете в своя пикселен интервал; CSV запазва всички часове. *Почасовият минимум не е гарантирано измерен абсолютен минимум.</p>
+    <p class="footnote">Температурата и влажността на почвата са средни за моделни слоеве, а не измервания на една точна дълбочина. Графиката визуализира наличните почасови стойности. За дълги периоди всяка точка е обобщение на часовете в своя пикселен интервал; CSV запазва всички часове. *Почасовият минимум не е гарантирано измерен абсолютен минимум.</p>
   </section>
   <section class="panel" id="analysisCharts">
     <div class="section-head"><div><p class="eyebrow">02 / АНАЛИЗ</p><h2>Сезонни климатични графики</h2></div>
       <span class="subtle">Исторически данни, не прогноза</span></div>
     <div class="analytics-grid">
+      <div class="mini-chart"><h3>Температура на почвата по слоеве</h3><p>Месечна средна за 0–7, 7–28, 28–100 и 100–255 cm</p><canvas id="soilTemperatureLayers" height="210"></canvas><div class="soil-legend"><span>0–7 cm</span><span>7–28 cm</span><span>28–100 cm</span><span>100–255 cm</span></div></div>
+      <div class="mini-chart"><h3>Влажност на почвата по слоеве</h3><p>Месечна средна обемна влажност (m³/m³)</p><canvas id="soilMoistureLayers" height="210"></canvas><div class="soil-legend"><span>0–7 cm</span><span>7–28 cm</span><span>28–100 cm</span><span>100–255 cm</span></div></div>
       <div class="mini-chart"><h3>Месечни температури</h3><p>Минимум, средна и максимум от почасовите стойности</p><canvas id="temperatureMonthly" height="210"></canvas></div>
       <div class="mini-chart"><h3>Студ и горещини</h3><p>Часове под 0°C и над 30°C по месеци</p><canvas id="stressMonthly" height="210"></canvas></div>
       <div class="mini-chart"><h3>Валежи</h3><p>Сума на почасовите количества, mm</p><canvas id="rainMonthly" height="210"></canvas></div>
