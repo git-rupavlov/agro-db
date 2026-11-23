@@ -138,3 +138,4 @@ for(const id of ["stage","stageMonth","duration"])$(id).addEventListener("change
 $("csv").addEventListener("click",exportCSV);
 window.addEventListener("resize",()=>{if(hourly)draw()});
 renderTraits();
+fetchClimate();
