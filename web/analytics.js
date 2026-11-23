@@ -39,6 +39,21 @@
    if(low)paint(low,colors.low,1.4);if(high)paint(high,colors.high,1.4);
    paint(values,colors.line,2.5);
  }
+
+ function layered(g,series,labels){
+   const all=series.flatMap(s=>s.data).filter(Number.isFinite);
+   if(!all.length)return;
+   let lo=Math.min(...all),hi=Math.max(...all);
+   const pad=Math.max((hi-lo)*0.1,0.01);lo-=pad;hi+=pad;
+   const ax=axes(g,lo,hi,labels);
+   series.forEach(s=>{
+      g.c.strokeStyle=s.color;g.c.lineWidth=2;g.c.beginPath();let started=false;
+      s.data.forEach((v,i)=>{if(!Number.isFinite(v)){started=false;return}
+        const x=ax.x(i),y=ax.y(v);if(!started){g.c.moveTo(x,y);started=true}else g.c.lineTo(x,y)
+      });
+      g.c.stroke();
+   });
+ }
  function render(){
    if(typeof hourly==="undefined"||!hourly?.time?.length)return;
    const byMonth=Array.from({length:12},()=>[]);
@@ -48,7 +63,13 @@
    const avg=ts.map(v=>v.length?v.reduce((a,b)=>a+b,0)/v.length:null);
    const low=ts.map(v=>v.length?Math.min(...v):null),high=ts.map(v=>v.length?Math.max(...v):null);
    const labels=["Я","Ф","М","А","М","Ю","Ю","А","С","О","Н","Д"];
-   let c=canvas("temperatureMonthly");if(c)line(c,avg,labels,low,high);
+   const layers=["0_to_7cm","7_to_28cm","28_to_100cm","100_to_255cm"];
+   const colorsByDepth=[colors.line,colors.low,colors.high,"#c29dde"];
+   let c=canvas("soilTemperatureLayers");
+   if(c)layered(c,layers.map((depth,i)=>({color:colorsByDepth[i],data:vals("soil_temperature_"+depth).map(v=>v.length?v.reduce((a,b)=>a+b,0)/v.length:null)})),labels);
+   c=canvas("soilMoistureLayers");
+   if(c)layered(c,layers.map((depth,i)=>({color:colorsByDepth[i],data:vals("soil_moisture_"+depth).map(v=>v.length?v.reduce((a,b)=>a+b,0)/v.length:null)})),labels);
+   c=canvas("temperatureMonthly");if(c)line(c,avg,labels,low,high);
    c=canvas("stressMonthly");if(c)bars(c,[{data:ts.map(v=>v.filter(t=>t<0).length),color:colors.low},{data:ts.map(v=>v.filter(t=>t>30).length),color:colors.high}],labels);
    c=canvas("rainMonthly");if(c)bars(c,[{data:vals("precipitation").map(v=>v.reduce((a,b)=>a+b,0)),color:colors.rain}],labels);
    const byHour=Array.from({length:24},()=>[]);
