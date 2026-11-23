@@ -3,8 +3,8 @@
 // All temperature thresholds are explicitly tagged as species-level reference values.
 const $ = id => document.getElementById(id);
 const months = ["Януари","Февруари","Март","Април","Май","Юни","Юли","Август","Септември","Октомври","Ноември","Декември"];
-const VARIABLES = ["temperature_2m","soil_temperature_0_to_7cm","relative_humidity_2m","precipitation","shortwave_radiation"];
-const UNITS = {temperature_2m:"°C",soil_temperature_0_to_7cm:"°C",relative_humidity_2m:"%",precipitation:"mm",shortwave_radiation:"W/m²"};
+const VARIABLES = ["temperature_2m","soil_temperature_0_to_7cm","soil_temperature_7_to_28cm","soil_temperature_28_to_100cm","soil_temperature_100_to_255cm","soil_moisture_0_to_7cm","soil_moisture_7_to_28cm","soil_moisture_28_to_100cm","soil_moisture_100_to_255cm","relative_humidity_2m","precipitation","shortwave_radiation"];
+const UNITS = {temperature_2m:"°C",soil_temperature_0_to_7cm:"°C",soil_temperature_7_to_28cm:"°C",soil_temperature_28_to_100cm:"°C",soil_temperature_100_to_255cm:"°C",soil_moisture_0_to_7cm:"m³/m³",soil_moisture_7_to_28cm:"m³/m³",soil_moisture_28_to_100cm:"m³/m³",soil_moisture_100_to_255cm:"m³/m³",relative_humidity_2m:"%",precipitation:"mm",shortwave_radiation:"W/m²"};
 const PHASES = {
   seed_germination:{name:"Покълване",min:20,max:30,opt:25,scope:"Вид, температура на субстрата",variable:"soil_temperature_0_to_7cm",warning:"Температурата на почвата 0–7 cm не е идентична с температурата в съда за разсад."},
   emergence:{name:"Поникване",min:null,max:null,scope:"Няма проверена температурна граница"},
