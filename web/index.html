@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15231b">
+  <meta name="description" content="Макоцево: климатични данни и агрономическо планиране по фази на развитие.">
+  <title>AgroDB · Макоцево</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">◈</span><div><strong>AgroDB</strong><small>МАКОЦЕВО · АГРОНОМИЧНА ЛАБОРАТОРИЯ</small></div></div>
+  <a href="https://github.com/git-rupavlov/agro-db" target="_blank" rel="noopener">GitHub ↗</a>
+</header>
+<main>
+  <section class="hero">
+    <div><p class="eyebrow">КЛИМАТ × ФИЗИОЛОГИЯ × ТЕРЕН</p><h1>Планиране на култури<br>по реални ограничения.</h1>
+    <p>Почасови исторически данни за района, фазови потребности на растенията и прозрачен анализ на рисковете. Без измислени климатични стойности.</p></div>
+    <div class="hero-tag"><span class="live-dot"></span><span id="sourceLabel">ERA5-Land · исторически реанализ</span></div>
+  </section>
+  <section class="panel controls">
+    <div class="controls-title"><h2>Местоположение и период</h2><span class="subtle">Ориентировъчни координати, променяеми</span></div>
+    <div class="fields">
+      <label>Ширина, °N<input id="lat" type="number" step="0.0001" min="-90" max="90" value="42.6916"></label>
+      <label>Дължина, °E<input id="lon" type="number" step="0.0001" min="-180" max="180" value="23.8108"></label>
+      <label>Година<select id="year"></select></label>
+      <label>Месец<select id="month"><option value="all">Цяла година</option></select></label>
+      <button id="load" class="primary">Изтегли почасови данни</button>
+    </div>
+    <p class="status" id="status" role="status">Изберете година и натиснете „Изтегли почасови данни“.</p>
+  </section>
+  <section class="metrics" id="metrics">
+    <article class="metric"><span>Средна температура</span><strong id="avgTemp">—</strong><small>°C, период</small></article>
+    <article class="metric"><span>Абсолютен минимум*</span><strong id="minTemp">—</strong><small>°C, почасови стойности</small></article>
+    <article class="metric"><span>Часове под 0°C</span><strong id="frostHours">—</strong><small>моделирана температура 2 m</small></article>
+    <article class="metric"><span>Часове над 30°C</span><strong id="heatHours">—</strong><small>температурен стрес, индикатор</small></article>
+    <article class="metric"><span>Валеж</span><strong id="rainTotal">—</strong><small>mm, сума на почасовите стойности</small></article>
+    <article class="metric"><span>Слънчева енергия</span><strong id="solarTotal">—</strong><small>kWh/m², глобално хоризонтално</small></article>
+  </section>
+  <section class="panel">
+    <div class="section-head"><div><p class="eyebrow">01 / КЛИМАТ</p><h2>Почасова времева серия</h2></div>
+      <div class="inline-controls"><label>Показател<select id="variable">
+        <option value="temperature_2m">Въздух, 2 m · °C</option>
+        <option value="soil_temperature_0_to_7cm">Почва, 0–7 cm · °C</option>
+        <option value="relative_humidity_2m">Влажност · %</option>
+        <option value="precipitation">Валеж · mm/h</option>
+        <option value="shortwave_radiation">Радиация · W/m²</option>
+      </select></label><button class="secondary" id="csv" disabled>Експорт CSV</button></div></div>
+    <div class="chart-wrap"><canvas id="hourChart" height="260" aria-label="Диаграма почасови исторически стойности"></canvas></div>
+    <p class="footnote">Графиката визуализира наличните почасови стойности. За дълги периоди всяка точка е обобщение на часовете в своя пикселен интервал; CSV запазва всички часове. *Почасовият минимум не е гарантирано измерен абсолютен минимум.</p>
+  </section>
+  <section class="panel">
+    <div class="section-head"><div><p class="eyebrow">02 / СЕЗОННОСТ</p><h2>Месечен климатичен профил</h2></div></div>
+    <div class="table-scroll"><table><thead><tr><th>Месец</th><th>Средна °C</th><th>Мин. °C</th><th>Макс. °C</th><th>Часове &lt; 0°C</th><th>Часове &gt; 30°C</th><th>Валеж mm</th></tr></thead><tbody id="monthly"><tr><td colspan="7">Няма изтеглени данни.</td></tr></tbody></table></div>
+  </section>
+  <section class="panel">
+    <div class="section-head"><div><p class="eyebrow">03 / БИОЛОГИЯ</p><h2>Растения и фази на развитие</h2></div></div>
+    <div class="fields plant-fields"><label>Култура<select id="crop"><option value="tomato">Домат · Solanum lycopersicum</option></select></label>
+      <label>Сорт<select id="cultivar"><option value="bobcat_f1">Bobcat F1</option></select></label>
+      <label>Фаза<select id="stage"></select></label>
+      <label>Начален месец на фазата<select id="stageMonth"></select></label>
+      <label>Продължителност, дни<input id="duration" type="number" min="1" max="180" value="30"></label></div>
+    <div id="traits" class="trait-grid"></div>
+    <div class="insight" id="compatibility">Заредете климатичните данни, за да анализираме избрания период.</div>
+    <p class="footnote">Планирането е ориентировъчно. Фазите се застъпват, а температурите на реанализа не заместват измерванията в конкретната леха. Сортовите данни и видовите данни са разграничени.</p>
+  </section>
+  <section class="panel">
+    <div class="section-head"><div><p class="eyebrow">04 / ТЕРЕН</p><h2>Какво знаем и какво трябва да измерим</h2></div></div>
+    <div class="terrain-grid">
+      <div><span class="field-label">Ориентировъчна позиция</span><strong id="coords">42.6916, 23.8108</strong><p>Координатите не са кадастрално установени граници.</p></div>
+      <div><span class="field-label">Реална почвена текстура</span><strong>Неизмерена</strong><p>Необходими са текстурен анализ, дренаж и профил по дълбочина.</p></div>
+      <div><span class="field-label">Слънчево засенчване</span><strong>Неизмерено</strong><p>ERA5-Land не отчита локалните сенки от гора, сгради и релеф.</p></div>
+      <div><span class="field-label">Микроклимат и слана</span><strong>Неизмерени</strong><p>Нужни са локални датчици и поне един сезон на сравнение.</p></div>
+    </div>
+  </section>
+</main>
+<footer>AgroDB · експериментална версия · <a href="https://open-meteo.com/en/docs/historical-weather-api" target="_blank" rel="noopener">Източник на климатични данни: Open-Meteo / ERA5-Land ↗</a><br>Историческият реанализ не гарантира условията на конкретния парцел.</footer>
+</body></html>
