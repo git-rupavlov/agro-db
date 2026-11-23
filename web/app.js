@@ -56,7 +56,7 @@ function render(){
   $("heatHours").textContent=temps.filter(x=>x>30).length.toLocaleString("bg-BG");
   $("rainTotal").textContent=number(sum(select("precipitation")));
   $("solarTotal").textContent=number(sum(select("shortwave_radiation"))/1000);
-  monthlyTable();draw();renderTraits()
+  monthlyTable();draw();renderTraits();document.dispatchEvent(new Event('agrodb:data-updated'))
 }
 function monthlyTable(){
   const rows=[];
