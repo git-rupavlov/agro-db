@@ -44,3 +44,7 @@ Alternatively publish the `/web` directory through GitHub Pages using a GitHub A
 - Sowing/transplant timeline with phase overlaps and hourly threshold risk.
 - Soil lab measurements, amendments and mulch trial datasets.
 - Provenance for every numeric plant requirement and dataset version.
+
+## Soil depth profiles
+
+ERA5-Land hourly soil temperature (°C) and soil volumetric moisture (m³/m³) are loaded for 0–7 cm, 7–28 cm, 28–100 cm, and 100–255 cm. Each is a **model-layer average**, not a point thermometer at its midpoint. The UI provides variable selection, monthly depth comparison graphs, and all eight variables in CSV export. Soil water estimates do not replace on-site measurements, particularly for clay, irrigation and local drainage.
